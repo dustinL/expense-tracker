@@ -1,0 +1,10 @@
+.row {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#category-list {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
