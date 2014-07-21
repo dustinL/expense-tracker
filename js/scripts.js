@@ -1,6 +1,5 @@
 var Category = {
   items: [],
-
 }
 
 var Purchase = {
@@ -9,15 +8,17 @@ var Purchase = {
   }
 };
 
+var currentCategory;
+
 $(document).ready(function(){
   $("#category-input").submit(function(event){
     event.preventDefault();
     newCategory = Object.create(Category);
     newCategory.name = $("#category").val();
+    currentCategory = newCategory.name;
     $("#category-list ul").append("<li class='clickable'>" + newCategory.name + "</li>");
-    $("span#name-category").text(newCategory.name);
+    $("span#name-category").text(currentCategory);
     $("div#purchase-list td").empty();
-
     $("#category").val("");
   });
 
@@ -28,6 +29,7 @@ $(document).ready(function(){
     newPurchase.dollarAmount = $("#amount").val();
     newPurchase.quantity = $("#quantity").val();
     newPurchase.purchaseTotalCost();
+
 
   $(".table tbody").append("<tr><td>" + newPurchase.description + "</td><td>$" + newPurchase.dollarAmount + "</td><td>" + newPurchase.quantity + "</td><td>$" + newPurchase.totalCost + "</td></tr>");
 
