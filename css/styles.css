@@ -8,3 +8,6 @@
   text-decoration: underline;
   cursor: pointer;
 }
+#purchase-list {
+  display:none;
+}
